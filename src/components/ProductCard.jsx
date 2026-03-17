@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onAddToCart }) => {
   return (
     <div className="border border-gray-200 rounded-lg flex flex-col h-full">
       <div className="flex-grow p-4 border-b border-gray-200">
@@ -23,6 +23,7 @@ const ProductCard = ({ product }) => {
         type="button"
         className="w-11/12 mx-auto mb-2 bg-indigo-600 text-white font-bold rounded-md px-5 py-1"
         disabled={product.stock === 0}
+        onClick={() => onAddToCart(product)}
       >
         {product.stock > 0 ? "Add to Cart" : "Unavailable"}
       </button>
